@@ -16,9 +16,11 @@ import pandas as pd
 # da pra fazer usando: hue=Gender.
 
 
-# # ex 1
+
 df = pd.read_csv('Ecommerce_Consumer_Behavior_Analysis_Data.csv')
 
+
+# ex 1
 # KDE = True
 # sns.histplot(data = df, x='Age', kde=True)
 # plt.savefig('00_Histoplot.png')
@@ -37,7 +39,11 @@ df = pd.read_csv('Ecommerce_Consumer_Behavior_Analysis_Data.csv')
 
 
 #ex 3
+# df['preco_limpo'] = df.apply(lambda x: float(x['Purchase_Amount'][1:]), axis=1)
+# sns.boxplot(data=df, x='Income_Level', y = 'preco_limpo')
+# plt.savefig('00_boxplotteste.png')
+# plt.show()
+# plt.close()
 
-df['preco_limpo'] = df.apply(lambda x: float(x['Purchase_Amount'][1:]), axis=1)
-sns.boxplot(data=df, x='Income_Level', y = 'preco_limpo')
-plt.show()
+# ex 4
+
