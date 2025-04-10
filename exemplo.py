@@ -45,5 +45,14 @@ df = pd.read_csv('Ecommerce_Consumer_Behavior_Analysis_Data.csv')
 # plt.show()
 # plt.close()
 
-# ex 4
+# # ex 4
+# KDE = True
+# sns.histplot(data=df, x='Customer_Satisfaction', hue='Gender', kde=True)
+# plt.show()
 
+#ex 4 2.0
+
+filtro = df[df['Gender'].isin(['Female', 'Male'])]
+KDE=True
+sns.histplot(data=filtro, x='Customer_Satisfaction', hue= 'Gender', kde=True)
+plt.show()
