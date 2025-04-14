@@ -50,9 +50,11 @@ df = pd.read_csv('Ecommerce_Consumer_Behavior_Analysis_Data.csv')
 # sns.histplot(data=df, x='Customer_Satisfaction', hue='Gender', kde=True)
 # plt.show()
 
-#ex 4 2.0
+#ex 4 
 
 filtro = df[df['Gender'].isin(['Female', 'Male'])]
 KDE=True
 sns.histplot(data=filtro, x='Customer_Satisfaction', hue= 'Gender', kde=True)
 plt.show()
+
+# vamos fazer uma alteracao qualquer 
