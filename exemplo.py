@@ -69,8 +69,13 @@ df = pd.read_csv('Ecommerce_Consumer_Behavior_Analysis_Data.csv')
 
 # ex 6: Violinplot de Brand_Loyalty por Purchase_Channel, dividido por Discount_Used (split=True).
 
-sns.violinplot(data=df, x='Brand_Loyalty', y='Purchase_Channel', hue='Discount_Used', split=True)
-plt.show()
+# sns.violinplot(data=df, x='Brand_Loyalty', y='Purchase_Channel', hue='Discount_Used', split=True)
+# plt.show()
 
 
 # ex: 7: Compare Frequency_of_Purchase entre membros e não membros do programa (Customer_Loyalty_Program_Member) usando um barplot agrupado.
+
+sns.barplot(data=df, y='Frequency_of_Purchase',hue='Customer_Loyalty_Program_Member',palette='rocket')
+plt.title('Frequencia de compra entre membros e não membros do programa de lealdade')
+plt.ylabel('Frequência de compra')
+plt.show()
