@@ -95,6 +95,9 @@ df = pd.read_csv('Ecommerce_Consumer_Behavior_Analysis_Data.csv')
 
 #ex 9: FacetGrid de Purchase_Amount vs Age, separado por Location (use col_wrap=3).
 
-grid = sns.FacetGrid(df, col='Purchase_Amount', row='Age')
+grid = sns.FacetGrid(df, col='Location', col_wrap=3)
+grid.map(sns.scatterplot, x='Age', y='Purchase_Amount')
 
-plt.show()
+grid.fig.suptitle('Relação entre idade e valor de compra por localização')
+plt.savefig('00_testando_facegrid.png')
+plt.close()
