@@ -1,6 +1,7 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
+import datetime
 
 
 # Requisitos básicos!!
@@ -107,7 +108,9 @@ df = pd.read_csv('Ecommerce_Consumer_Behavior_Analysis_Data.csv')
 # ex 10:"Converta Time_of_Purchase para datetime e plote a média mensal de Purchase_Amount com um lineplot."
 
 
-
+date = df['data_limpa'] = df.apply(lambda x: datetime.datetime(x['Time_of_Purchase'][1:]), axis=1)
+sns.lineplot(data=df, x='Purchase_Amount', y='date', estimator='mean')
+plt.show()
 
 
 
