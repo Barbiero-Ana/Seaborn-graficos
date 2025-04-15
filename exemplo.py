@@ -83,10 +83,10 @@ df = pd.read_csv('Ecommerce_Consumer_Behavior_Analysis_Data.csv')
 
 # ex 8: Heatmap da frequência cruzada entre Payment_Method e Device_Used_for_Shopping.
 
-tabela = df.groupby(['Device_Used_for_Shopping', 'Payment_Method']).size().unstack(fill_value=0)
-sns.heatmap(data=tabela, annot=True, cmap='plasma', fmt='d')
-plt.savefig('00_heatmap.png')
-plt.show()
+# tabela = df.groupby(['Device_Used_for_Shopping', 'Payment_Method']).size().unstack(fill_value=0)
+# sns.heatmap(data=tabela, annot=True, cmap='plasma', fmt='d')
+# plt.savefig('00_heatmap.png')
+# plt.show()
 
 # o annot = True -> anota os valores dentro dos quadrados no gráfico, o  'YlOrRd' refere-se a cor da table, o fmt = 'd' - > faz com que os numeros que aparecem no annot sejam decimais nao quebrados (sem ser de virgula)
 
@@ -94,3 +94,7 @@ plt.show()
 # exercicios avancados ---------------------------------------
 
 #ex 9: FacetGrid de Purchase_Amount vs Age, separado por Location (use col_wrap=3).
+
+grid = sns.FacetGrid(df, col='Purchase_Amount', row='Age')
+
+plt.show()
