@@ -75,7 +75,22 @@ df = pd.read_csv('Ecommerce_Consumer_Behavior_Analysis_Data.csv')
 
 # ex: 7: Compare Frequency_of_Purchase entre membros e não membros do programa (Customer_Loyalty_Program_Member) usando um barplot agrupado.
 
-sns.barplot(data=df, y='Frequency_of_Purchase',hue='Customer_Loyalty_Program_Member',palette='rocket')
-plt.title('Frequencia de compra entre membros e não membros do programa de lealdade')
-plt.ylabel('Frequência de compra')
+# sns.barplot(data=df, y='Frequency_of_Purchase',hue='Customer_Loyalty_Program_Member',palette='rocket')
+# plt.title('Frequencia de compra entre membros e não membros do programa de lealdade')
+# plt.ylabel('Frequência de compra')
+# plt.show()
+
+
+# ex 8: Heatmap da frequência cruzada entre Payment_Method e Device_Used_for_Shopping.
+
+tabela = df.groupby(['Device_Used_for_Shopping', 'Payment_Method']).size().unstack(fill_value=0)
+sns.heatmap(data=tabela, annot=True, cmap='plasma', fmt='d')
+plt.savefig('00_heatmap.png')
 plt.show()
+
+# o annot = True -> anota os valores dentro dos quadrados no gráfico, o  'YlOrRd' refere-se a cor da table, o fmt = 'd' - > faz com que os numeros que aparecem no annot sejam decimais nao quebrados (sem ser de virgula)
+
+
+# exercicios avancados ---------------------------------------
+
+#ex 9: FacetGrid de Purchase_Amount vs Age, separado por Location (use col_wrap=3).
