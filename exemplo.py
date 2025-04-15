@@ -52,9 +52,25 @@ df = pd.read_csv('Ecommerce_Consumer_Behavior_Analysis_Data.csv')
 
 #ex 4 
 
-filtro = df[df['Gender'].isin(['Female', 'Male'])]
-KDE=True
-sns.histplot(data=filtro, x='Customer_Satisfaction', hue= 'Gender', kde=True)
+# filtro = df[df['Gender'].isin(['Female', 'Male'])]
+# KDE=True
+# sns.histplot(data=filtro, x='Customer_Satisfaction', hue= 'Gender', kde=True)
+# plt.show()
+
+# ex intermediarios ---------------–---------------------
+
+# ex 5 : Scatterplot de Time_Spent_on_Product_Research(hours) vs Product_Rating, colorido por Purchase_Category.
+
+# sns.scatterplot(data=df, x='Time_Spent_on_Product_Research(hours)', y='Product_Rating', hue='Purchase_Category')
+# plt.savefig('00_Scatterplot_TimeSpent.png')
+# plt.show()
+
+
+
+# ex 6: Violinplot de Brand_Loyalty por Purchase_Channel, dividido por Discount_Used (split=True).
+
+sns.violinplot(data=df, x='Brand_Loyalty', y='Purchase_Channel', hue='Discount_Used', split=True)
 plt.show()
 
-# vamos fazer uma alteracao qualquer 
+
+# ex: 7: Compare Frequency_of_Purchase entre membros e não membros do programa (Customer_Loyalty_Program_Member) usando um barplot agrupado.
