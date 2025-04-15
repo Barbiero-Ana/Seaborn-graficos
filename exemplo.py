@@ -95,19 +95,20 @@ df = pd.read_csv('Ecommerce_Consumer_Behavior_Analysis_Data.csv')
 
 #ex 9: FacetGrid de Purchase_Amount vs Age, separado por Location (use col_wrap=3).
 
-
-filtro = df[df['Location'].]
-grid = sns.FacetGrid(df, col='Location', col_wrap=3)
-grid.map(sns.scatterplot, x='Age', y='Purchase_Amount')
-
-# grid.fig.suptitle('Relação entre idade e valor de compra por localização')
-# plt.savefig('00_testando_facegrid.png')
-# plt.close()
-plt.show()
+# qtd = int(input('Digite a quantidade de locais que deseja ver: '))
+# t_local = df['Location'].value_counts().head(qtd).index
+# filtro = df[df['Location'].isin(t_local)]
+# grid = sns.FacetGrid(filtro, col='Location', col_wrap=3)
+# grid.map_dataframe(sns.scatterplot, x='Age', y='Purchase_Amount')
+# plt.show()
 
 
 
 # ex 10:"Converta Time_of_Purchase para datetime e plote a média mensal de Purchase_Amount com um lineplot."
+
+
+
+
 
 
 # ex 11: Crie um pairplot das variáveis numéricas, colorido por Shipping_Preference.
